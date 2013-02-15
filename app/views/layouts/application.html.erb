@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <title>Import File Sales</title>
+  <%= stylesheet_link_tag "application" %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <a href="https://github.com/cotelha/desafio-programacao-1">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+      </a>
+      <div class="container">
+        <a class="brand" href="#">Import File Sales</a>
+        <ul class="nav">
+          <li><%= link_to "Home", root_path %></li>          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="container master-container">
+
+	<%= yield %>
+
+    <% if notice %>
+      <div class="alert alert-success fade in" data-alert="alert">
+        <a class="close" data-dismiss='alert' href="#">×</a>
+        <p><%= notice %></p>
+      </div>
+    <% end %>
+
+    <% if alert %>
+      <div class="alert alert-error fade in" data-alert="alert">
+        <a class="close" data-dismiss='alert' href="#">×</a>
+        <p><%= alert %></p>
+      </div>
+    <% end %>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Copyright 2013 </p>      
+    </div>
+  </footer>
+  <%= javascript_include_tag "application" %>
+</body>
+</html>

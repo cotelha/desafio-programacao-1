@@ -1,0 +1,21 @@
+			
+      <div class='alert alert-info fade in'>
+        <h3>
+          <strong>
+            <% unless @sum_sale.blank? then %>
+              Olá, sua receita bruta total é de: <%= number_to_currency(@sum_sale, :unit => "R$ ", :separator => ",", :delimiter => "") %>
+            <% else %>      
+              Olá, não existe receita informada até o momento.
+            <% end %>
+          </strong>
+        </h3>
+      </div>
+
+      <div class="well box-import-file">
+				Selecione o arquivo de Vendas para atualizar a base de dados.
+				<%= form_tag homes_import_path, :multipart => true, :class=>"form-horizontal" do %>				  
+				  <%= file_field_tag "file" %>
+				  <%= submit_tag "Importar Arquivo", :class => 'btn btn-large btn-block btn-primary', :style=>"margin-top:20px;" %>
+				<% end %>
+      </div>
+      
